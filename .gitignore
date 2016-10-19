@@ -57,3 +57,5 @@ saves/**
 *.psd
 classes
 extras/**
+/.gitignore
+/commitChanges.ps1
