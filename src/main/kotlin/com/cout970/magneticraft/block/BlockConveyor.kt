@@ -21,7 +21,7 @@ import net.minecraft.world.World
 /**
 * Created by Qwyll on 10/2/2016.
 */
-object BlockConveyor : BlockMultiState( Material.IRON, "conveyor" ) {
+object BlockConveyor : BlockMultiState( Material.IRON, "conveyor" ), ITileEntityProvider {
     val boundingBox = Vec3d.ZERO to Vec3d(1.0, 0.25, 1.0)
 
     override fun isFullBlock(state: IBlockState?) = false
@@ -33,10 +33,19 @@ object BlockConveyor : BlockMultiState( Material.IRON, "conveyor" ) {
     override fun getStateFromMeta(meta: Int): IBlockState = defaultState.withProperty(PROPERTY_FACING, EnumFacing.getHorizontal(meta))
     override fun createBlockState(): BlockStateContainer = BlockStateContainer(this, PROPERTY_FACING)
     override fun getMetaFromState(state: IBlockState): Int = PROPERTY_FACING[state].ordinal
+    override fun createNewTileEntity(worldIn: World?, meta: Int): TileEntity = TileConveyor()
 
     override fun onBlockPlacedBy(worldIn: World, pos: BlockPos?, state: IBlockState?, placer: EntityLivingBase?, stack: ItemStack?) {
         super.onBlockPlacedBy(worldIn, pos, state, placer, stack)
         worldIn.setBlockState(pos, defaultState.withProperty(PROPERTY_FACING, placer?.horizontalFacing))
     }
 
+    override fun onBlockActivated(worldIn: World, pos: BlockPos, state: IBlockState, playerIn: EntityPlayer, hand: EnumHand?, heldItem: ItemStack?, side: EnumFacing?, hitX: Float, hitY: Float, hitZ: Float): Boolean {
+        if (playerIn.isSneaking) return false
+        val tileEntity = worldIn.getTileEntity(pos)
+        if (tileEntity is TileConveyor) {
+            tileEntity
+        }
+        return super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ)
+    }
 }

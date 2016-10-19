@@ -35,7 +35,8 @@ val blocks = mapOf(
         pair(BlockCompactedLead),
         pair(BlockCompactedTungsten),
         pair(BlockSolarPanel),
-        pair(BlockElectricalMachineBlock)
+        pair(BlockElectricalMachineBlock),
+        pair(BlockConveyor)
 //        BlockInserter               to ItemBlockBase(BlockInserter)
 )
 
