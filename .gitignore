@@ -58,4 +58,5 @@ saves/**
 classes
 extras/**
 /.gitignore
-/commitChanges.ps1
+/tools*
+message.txt
