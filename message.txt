@@ -1,0 +1,1 @@
+Added support for custom messages to build script.
