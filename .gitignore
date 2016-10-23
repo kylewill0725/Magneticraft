@@ -60,3 +60,7 @@ extras/**
 /.gitignore
 /tools*
 message.txt
+/src/main/resources/assets/magneticraft/models/block/blender/
+/gradle.properties
+/build.gradle
+/settings.gradle
