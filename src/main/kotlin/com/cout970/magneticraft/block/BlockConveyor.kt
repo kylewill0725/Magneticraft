@@ -21,7 +21,7 @@ import net.minecraft.world.World
 /**
 * Created by Qwyll on 10/2/2016.
 */
-object BlockConveyor : BlockMultiState( Material.IRON, "conveyor" ) {
+object BlockConveyor : BlockMultiState( Material.IRON, "conveyor_belt" ) {
     val boundingBox = Vec3d.ZERO to Vec3d(1.0, 0.25, 1.0)
 
     override fun isFullBlock(state: IBlockState?) = false
