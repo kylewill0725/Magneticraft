@@ -21,7 +21,7 @@ object TileRendererSolarPanel : TileEntityRenderer<TileSolarPanel>() {
             GlStateManager.pushMatrix()
             GlStateManager.translate(x, y, z)
             rotateFromCenter(te.direction, 0f)
-            renderMultiblockBlueprint(MultiblockSolarPanel)
+            //renderMultiblockBlueprint(MultiblockSolarPanel)
             GlStateManager.popMatrix()
             return
         }
