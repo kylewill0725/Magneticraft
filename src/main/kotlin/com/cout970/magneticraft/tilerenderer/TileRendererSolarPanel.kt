@@ -12,7 +12,8 @@ import net.minecraft.client.renderer.GlStateManager
  */
 object TileRendererSolarPanel : TileEntityRenderer<TileSolarPanel>() {
 
-    val texture = resource("textures/models/solar_panel.png")
+//    val texture = resource("textures/models/solar_panel.png")
+    val texture = resource("textures/models/conveyor_belt.png")
     lateinit var model: ICachedModel
 
     override fun renderTileEntityAt(te: TileSolarPanel, x: Double, y: Double, z: Double, partialTicks: Float, destroyStage: Int) {
@@ -37,7 +38,8 @@ object TileRendererSolarPanel : TileEntityRenderer<TileSolarPanel>() {
     override fun onModelRegistryReload() {
         super.onModelRegistryReload()
         try {
-            val dyn = getModelObj(resource("models/block/obj/solar_panel.obj"))
+//            val dyn = getModelObj(resource("models/block/obj/solar_panel.obj"))
+            val dyn = getModelObj(resource("models/block/obj/conveyor_belt-short.obj"))
             this.model = ModelCacheFactory.createCachedModel(dyn.model, 1)
         } catch (e: Exception) {
         }

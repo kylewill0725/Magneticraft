@@ -64,3 +64,4 @@ message.txt
 /gradle.properties
 /build.gradle
 /settings.gradle
+/src/main/kotlin/com/cout970/magneticraft/tilerenderer/TileRendererSolarPanel.kt
