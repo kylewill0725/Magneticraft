@@ -30,9 +30,9 @@ object BlockConveyor : BlockMultiState( Material.IRON, "conveyor_belt" ) {
     override fun isVisuallyOpaque() = false
     override fun getBoundingBox(state: IBlockState?, source: IBlockAccess?, pos: BlockPos?) = boundingBox
 
-    override fun getStateFromMeta(meta: Int): IBlockState = defaultState.withProperty(PROPERTY_FACING, EnumFacing.getHorizontal(meta))
+    override fun getStateFromMeta(meta: Int): IBlockState = defaultState.withProperty(PROPERTY_DIRECTION, EnumFacing.getHorizontal(meta and 3))
     override fun createBlockState(): BlockStateContainer = BlockStateContainer(this, PROPERTY_FACING)
-    override fun getMetaFromState(state: IBlockState): Int = PROPERTY_FACING[state].ordinal
+    override fun getMetaFromState(state: IBlockState): Int = (PROPERTY_DIRECTION[state].ordinal-2) and 3
 //    override fun createNewTileEntity(worldIn: World?, meta: Int): TileEntity = TileConveyor()
 
     override fun onBlockPlacedBy(worldIn: World, pos: BlockPos?, state: IBlockState?, placer: EntityLivingBase?, stack: ItemStack?) {
