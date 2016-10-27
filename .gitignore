@@ -57,10 +57,10 @@ saves/**
 *.psd
 classes
 extras/**
-/.gitignore
-/tools*
+#/.gitignore
+#/tools*
 message.txt
-/src/main/resources/assets/magneticraft/models/block/blender/
-/gradle.properties
-/build.gradle
-/settings.gradle
+#/src/main/resources/assets/magneticraft/models/block/blender/
+#/gradle.properties
+#/build.gradle
+#/settings.gradle
