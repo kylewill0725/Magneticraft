@@ -41,11 +41,11 @@ object BlockConveyor : BlockMultiState( Material.IRON, "conveyor" ), ITileEntity
     }
 
     override fun onBlockActivated(worldIn: World, pos: BlockPos, state: IBlockState, playerIn: EntityPlayer, hand: EnumHand?, heldItem: ItemStack?, side: EnumFacing?, hitX: Float, hitY: Float, hitZ: Float): Boolean {
-        if (playerIn.isSneaking) return false
-        val tileEntity = worldIn.getTileEntity(pos)
-        if (tileEntity is TileConveyor) {
-            tileEntity
-        }
+//        if (playerIn.isSneaking) return false
+//        val tileEntity = worldIn.getTileEntity(pos)
+//        if (tileEntity is TileConveyor) {
+//            tileEntity
+//        }
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ)
     }
 }

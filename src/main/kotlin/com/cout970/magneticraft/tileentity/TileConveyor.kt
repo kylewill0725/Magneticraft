@@ -19,15 +19,16 @@ class TileConveyor : TileBase(), ITickable, IConveyor {
     val inventory = Inventory()
 
     override fun load(nbt: NBTTagCompound) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun update() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun save(): NBTTagCompound {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return NBTTagCompound()
     }
 
     override fun hasCapability(capability: Capability<*>?, facing: EnumFacing?): Boolean {
