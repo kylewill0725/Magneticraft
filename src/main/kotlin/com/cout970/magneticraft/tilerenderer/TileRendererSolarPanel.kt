@@ -17,7 +17,7 @@ object TileRendererSolarPanel : TileEntityRenderer<TileSolarPanel>() {
     lateinit var model: ICachedModel
 
     override fun renderTileEntityAt(te: TileSolarPanel, x: Double, y: Double, z: Double, partialTicks: Float, destroyStage: Int) {
-        if (!te.active) {
+        if (te.active) {
             GlStateManager.pushMatrix()
             GlStateManager.translate(x, y, z)
             rotateFromCenter(te.direction, 0f)
