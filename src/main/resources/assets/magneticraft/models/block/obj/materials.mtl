@@ -13,7 +13,6 @@ map_Kd magneticraft:models/hydraulic_press
 
 newmtl solar_panel
 map_Kd magneticraft:models/solar_panel
-map_Kd X:\Users\Magneticraft\Documents\Minecraft\Magneticraft\Magneticraft_1.9\src\main\resources\assets\magneticraft\textures\models\conveyor_belt.png
 
 newmtl conveyor_belt
 map_Kd magneticraft:models/conveyor_belt
