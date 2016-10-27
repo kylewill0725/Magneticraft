@@ -5,4 +5,5 @@ Set-Location $path
 $buildNum = git rev-list --count HEAD
 $buildNum -= 135
 New-Item ".\message.txt"
-Add-Content ".\message.txt" "Build $buildNum"
+$message = ((git log -1 --pretty=%B)  -join "`r`n")
+Add-Content ".\message.txt" "$message"
