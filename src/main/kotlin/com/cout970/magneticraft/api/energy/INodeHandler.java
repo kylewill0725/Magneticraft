@@ -16,8 +16,8 @@ public interface INodeHandler {
     List<INode> getNodes();
 
     /**
-     * The pos in world of this handler
-     * @return The pos of this handler
+     * The position in world of this handler
+     * @return The position of this handler
      */
     BlockPos getPos();
 }
