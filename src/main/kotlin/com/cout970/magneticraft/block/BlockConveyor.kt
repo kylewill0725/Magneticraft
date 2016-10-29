@@ -1,7 +1,7 @@
 package com.cout970.magneticraft.block
 
 import coffee.cypher.mcextlib.extensions.aabb.to
-import com.cout970.magneticraft.tileentity.TileConveyor
+import com.cout970.magneticraft.tileentity.TileConveyorBelt
 import com.cout970.magneticraft.util.get
 import net.minecraft.block.ITileEntityProvider
 import net.minecraft.block.material.Material
@@ -33,7 +33,7 @@ object BlockConveyor : BlockMultiState( Material.IRON, "conveyor_belt" ) {
     override fun getStateFromMeta(meta: Int): IBlockState = defaultState.withProperty(PROPERTY_DIRECTION, EnumFacing.getHorizontal(meta and 3))
     override fun createBlockState(): BlockStateContainer = BlockStateContainer(this, PROPERTY_DIRECTION)
     override fun getMetaFromState(state: IBlockState): Int = (PROPERTY_DIRECTION[state].ordinal-2) and 3
-//    override fun createNewTileEntity(worldIn: World?, meta: Int): TileEntity = TileConveyor()
+//    override fun createNewTileEntity(worldIn: World?, meta: Int): TileEntity = TileConveyorBelt()
 
     override fun onBlockPlacedBy(worldIn: World, pos: BlockPos?, state: IBlockState?, placer: EntityLivingBase?, stack: ItemStack?) {
         super.onBlockPlacedBy(worldIn, pos, state, placer, stack)
@@ -43,7 +43,7 @@ object BlockConveyor : BlockMultiState( Material.IRON, "conveyor_belt" ) {
     override fun onBlockActivated(worldIn: World, pos: BlockPos, state: IBlockState, playerIn: EntityPlayer, hand: EnumHand?, heldItem: ItemStack?, side: EnumFacing?, hitX: Float, hitY: Float, hitZ: Float): Boolean {
 //        if (playerIn.isSneaking) return false
 //        val tileEntity = worldIn.getTileEntity(pos)
-//        if (tileEntity is TileConveyor) {
+//        if (tileEntity is TileConveyorBelt) {
 //            tileEntity
 //        }
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ)

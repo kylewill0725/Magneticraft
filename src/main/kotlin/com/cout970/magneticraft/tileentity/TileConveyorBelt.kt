@@ -1,8 +1,9 @@
 package com.cout970.magneticraft.tileentity
 
-import com.cout970.magneticraft.api.conveyor.IConveyor
+import com.cout970.magneticraft.api.conveyor.IConveyorBelt
 import com.cout970.magneticraft.api.conveyor.IItemBox
 import com.cout970.magneticraft.registry.ITEM_HANDLER
+import com.cout970.magneticraft.tileentity.TileBase
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
@@ -15,7 +16,7 @@ import net.minecraftforge.items.ItemStackHandler
 /**
  * Created by Qwyll on 10/2/2016.
  */
-class TileConveyor : TileBase(), ITickable, IConveyor {
+class TileConveyorBelt : TileBase(), ITickable, IConveyorBelt {
     val inventory = Inventory()
 
     override fun load(nbt: NBTTagCompound) {
