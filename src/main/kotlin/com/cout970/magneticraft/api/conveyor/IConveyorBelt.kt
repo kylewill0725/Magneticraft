@@ -22,14 +22,14 @@ interface IConveyorBelt {
         }
     }
 
-    fun addItem( direction: EnumFacing, pos: BlockPos, itemBox: IItemBox )
-    fun removeItem( itemBox: IItemBox, laneNum: Int, simulated: Boolean )
+    fun addItem(direction: EnumFacing, pos: Int, itemBox: IItemBox, sim: Boolean): Boolean
+    fun removeItem(itemBox: IItemBox, laneNum: Int, simulated: Boolean ): Boolean
     fun getLaneCount(): Int
     fun getLane(laneNum: Int ): IConveyorBeltLane
     fun getDir(): EnumFacing
     fun getSlope(): Int
     fun extract( itemBox: IItemBox, laneNum: Int, simulated: Boolean ): Boolean
-    fun inject( pos: BlockPos, itemBox: IItemBox, laneNum: Int, simulated: Boolean ): Boolean
+    fun inject(pos: Int, itemBox: IItemBox, laneNum: Int, simulated: Boolean ): Boolean
     fun getParent(): TileEntity
     fun onChange()
 }

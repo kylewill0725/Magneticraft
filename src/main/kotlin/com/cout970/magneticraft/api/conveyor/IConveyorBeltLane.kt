@@ -10,7 +10,7 @@ interface IConveyorBeltLane {
 
     fun getConveyorBelt(): IConveyorBelt
 
-    fun getItemBoxes(): List<IItemBox>
+    fun getItemBoxes(): MutableList<IItemBox>
 
     fun getHitBoxes(): IHitBoxArray
 

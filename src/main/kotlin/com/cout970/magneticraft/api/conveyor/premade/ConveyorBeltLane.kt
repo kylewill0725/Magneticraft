@@ -117,15 +117,17 @@ class ConveyorBeltLane : IConveyorBeltLane {
         }
     }
 
-    fun getFrontConveyor(c: IConveyorBelt): TileEntity {
-        val t = c.getParent()
-        var retVal: TileEntity
-        when (c.getSlope()) {
-            1 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY + 1, c.getDir().frontOffsetZ)) ?: throw Exception("This up ramp is missing an exit.")
-            -1 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY - 1, c.getDir().frontOffsetZ)) ?: throw Exception("This down ramp is missing an exit.")
-            0 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY, c.getDir().frontOffsetZ)) ?: throw Exception("This conveyor is missing an exit.")
-            else -> throw Exception("Invalid slope")
+    companion object {
+        fun getFrontConveyor(c: IConveyorBelt): TileEntity {
+            val t = c.getParent()
+            var retVal: TileEntity
+            when (c.getSlope()) {
+                1 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY + 1, c.getDir().frontOffsetZ)) ?: throw Exception("This up ramp is missing an exit.")
+                -1 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY - 1, c.getDir().frontOffsetZ)) ?: throw Exception("This down ramp is missing an exit.")
+                0 -> retVal = t.world.getTileEntity(t.pos.add(c.getDir().frontOffsetX, c.getDir().frontOffsetY, c.getDir().frontOffsetZ)) ?: throw Exception("This conveyor is missing an exit.")
+                else -> throw Exception("Invalid slope")
+            }
+            return retVal
         }
-        return retVal
     }
 }
