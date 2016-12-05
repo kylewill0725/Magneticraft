@@ -1,0 +1,21 @@
+Changes:
+- Added BlockConveyor
+    - Bounding Box is incorrect due to changes in model
+    - onBlockActivated is missing wrench handling.
+- Added TileConveyorBelt
+    - Uses an array of ConveyorBeltLane instead of left and right variables.
+    - advLane (formerly moveCole) has some bugs. I can't remember specifics but it had to do with the lane holding more items then it was supposed to.
+    - Capabilities are not functioning.
+    - getSlope needs more testing.
+- Added TileRendererConveyorBelt.kt
+    -Not implemented
+- Added a copy of the conveyor api from Magneticraft 1.7
+    - (IHitBoxArray) Changed function name from hasSpace(int pos) to isOccupied(int pos) as I felt it better reflected what it was doing.
+-Changed registry.Blocks to add BlockConveyor
+-Changed registry.TileEntities to add TileConveyorBelt
+
+TODO:
+- Fix rendering
+    - The block renders and that's it.
+- Double check getSlope and advLane in the class TileConveyorBelt
+- Implement Capabilities
